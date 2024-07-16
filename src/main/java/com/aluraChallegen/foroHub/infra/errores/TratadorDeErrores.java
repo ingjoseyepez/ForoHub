@@ -41,19 +41,12 @@ public class TratadorDeErrores {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
-//    @ExceptionHandler(TokenExpiredException.class)
-//    public ResponseEntity errorHandlerToken(Exception e) {
-//        return ResponseEntity.badRequest().body(e.getMessage());
-//    }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity errorHandlerJSONVacio() {
         return ResponseEntity.badRequest().body("Ingrese los datos en formato JSON");
     }
 
-//    @ExceptionHandler(DataIntegrityViolationException.class)
-//    public ResponseEntity errorHandlerDuplicateEntry() {
-//        return ResponseEntity.badRequest().body("Entrada duplicada, modifique el titulo y/o mensaje");
-//    }
+
 
 }
